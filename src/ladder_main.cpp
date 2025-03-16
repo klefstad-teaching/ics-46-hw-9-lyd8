@@ -10,6 +10,10 @@ int main() {
     load_words(word_list, "words.txt");
 
     string start_word, end_word;
+    cout << "Start word: ";
+    cin >> start_word;
+    cout << "End word: ";
+    cin >> end_word;
 
     vector<string> ladder = generate_word_ladder(start_word, end_word, word_list);
     print_word_ladder(ladder);

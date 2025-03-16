@@ -16,4 +16,14 @@ int main() {
         cerr << e.what() << endl;
         return 1;
     }
+        
+    for (int i = 0; i < G.numVertices; i++) {
+        cout << "Vertex " << i << " edges: ";
+        for (const Edge &e : G[i]) {
+            cout << e << " ";
+        }
+        cout << "\n";
+    }
+    
+    return 0;
 }
