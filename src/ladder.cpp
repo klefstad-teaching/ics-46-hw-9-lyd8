@@ -38,9 +38,11 @@ bool one_insertion(const string &shorter, const string &longer) {
 
 bool edit_distance_within(const string& s, const string& t, int d) {
     if (d < 0) return false;
+    if (s == t) return true;
+    
     int lenDiff = abs((int)s.size() - (int)t.size());
     if (lenDiff > d) return false;
-    if (d == 0) return s == t;
+    if (d == 0) return false;
     
     if (d == 1) {
         if (s.size() == t.size())
@@ -70,8 +72,6 @@ bool edit_distance_within(const string& s, const string& t, int d) {
 }
 
 bool is_adjacent(const string& word1, const string& word2) {
-    if(word1 == word2)
-        return false;
     return edit_distance_within(word1, word2, 1);
 }
 
